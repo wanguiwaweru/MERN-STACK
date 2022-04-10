@@ -1,0 +1,80 @@
+/*import { useState, useEffect } from "react"
+
+const Customer = (props) => (
+    <tr>
+        <td>{props.customer.name}</td>
+        <td>{props.customer.email}</td>
+        <td>{props.customer.phoneNumber}</td>
+        <td>{props.customer.location}</td>
+        <td>
+            <button className="btn btn-link" to={`/edit/${props.customer._id}`}>Edit</button> |
+            <button className="btn btn-link" onClick={() => { props.deleteCustomer(props.customer._id); }}>
+                Delete
+            </button>
+        </td>
+    </tr>
+);
+const Vendor = () => {
+    const [customers, setCustomers] = useState([]);
+
+    // fetches the records from the database.
+    useEffect(() => {
+            const response = fetch(`http://localhost:5000/customers/`);
+            if (!response.ok) {
+                const message = `An error occurred: ${response.statusText}`;
+                window.alert(message);
+                return;
+        }
+        setCustomers(response.data);
+    }, []);
+
+    // This method will delete a record
+    async function deleteCustomer(id) {
+        await fetch(`http://localhost:5000/customers/${id}`, {
+            method: "DELETE"
+        });
+
+        const newCustomers = customers.filter((el) => el._id !== id);
+        setCustomers(newCustomers);
+    }
+
+        // This method will map out the records on the table
+    function customerList() {
+        return customers.map((customer) => {
+            return (
+                <Customer
+                    customer={customer}
+                    deleteCustomer = {() => deleteCustomer(customer._id)}
+                    key={customer._id}
+                />
+            );
+        });
+    }
+
+return (
+    <div>
+        <h3>Customers List</h3>
+        <table className="table table-striped" style={{ marginTop: 20 }}>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>{ customerList()}</tbody>
+        </table>
+    </div>
+);
+}
+<TableCell align="center" style={{ color: "blue", cursor: "pointer"}}component={Link} onClick={() => deleteCustomer(customer._id)}> Delete </TableCell>
+<Link style={{ cursor: "pointer" }} onClick={() => deleteCustomer(customer._id)}> Delete |   </Link>
+                                    <Link style={{ cursor: "pointer" }} to={`/edit/${customer._id}`} >Edit</Link>
+ component={Link} to={`/edit/${customer._id}`} > Edit
+<Link style={{cursor:"pointer"}} onClick={() => deleteCustomer(customer._id)}> Delete |   </Link>
+<TableCell >
+    <Link style={{ cursor: "pointer" }} onClick={() => deleteCustomer(customer._id)}> Delete </Link>
+    </TableCell>
+export default Vendor*/
